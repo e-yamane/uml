@@ -8,13 +8,17 @@
 ### 単一クラスの表現
 
 ```uml
-@startuml
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
-@enduml
+class クラス名 <<ステレオタイプ>> {
+  + クラス外部から参照出来るフィールド:型
+  + {static} CLASS_FIELD:型
+  # 自クラスと子クラスから参照出来るフィールド:型
+  - 自クラスからのみ参照するフィールド:型
+  + クラス外部から参照出来るメソッド(引数1, 引数2):型
+  + {static}クラス外部から参照出来るクラスフィールド():型
+  + {abstract}抽象メソッド():型
+  # 自クラスと子クラスから参照出来るメソッド():型
+  - 自クラスからのみ参照するメソッド():型
+}
 ```
 
 ```mermaid
